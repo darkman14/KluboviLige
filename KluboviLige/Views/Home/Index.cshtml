@@ -1,0 +1,190 @@
+﻿@section Scripts{
+    @Scripts.Render("~/Scripts/LigeKluboviSkripta.js")
+}
+
+<br />
+<div class="row">
+    <div class="col-sm-8">
+        <p id="info"></p>
+    </div>
+    <div class="col-sm-4" id="odjava" style="text-align:right">
+        <button class="btn btn-success" id="odjavise">Odjava</button>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12" style="text-align:center" id="login">
+        <form method="post" action="post/" id="prijava">
+            <h2>Prijava</h2>
+            <table style="text-align:left; margin-left:auto;margin-right:auto; width:auto">
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <label>Korisničko ime:</label>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <input class="form-control" type="text" id="priKorisnik" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <label>Lozinka:</label>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <input class="form-control" type="password" id="priLoz" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <button type="submit" class="btn btn-default">Prijava</button>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <button type="button" class="btn btn-info" id="btnRegView">Registracija</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <form method="post" action="post/" id="registracija">
+            <h2>Registracija</h2>
+            <table style="text-align:left; margin-left:auto;margin-right:auto; width:auto">
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <label>Korisničko ime:</label>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <input class="form-control" type="text" id="regKorisnik" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <label>Lozinka:</label>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <input class="form-control" type="password" id="regLoz" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <label>Ponovite lozinku:</label>
+                    </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <input class="form-control" type="password" id="regLoz2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td style="padding-top:20px; padding-bottom:10px; padding-right:20px">
+                        <button type="submit" class="btn btn-default">Registruj se</button>
+                    </td>
+                    <td> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="row" id="tableIndex">
+    <div class="col-sm-12" style="text-align:center">
+        <h2>Sportski klubovi</h2>
+        <br />
+        <table style="text-align:center; margin-left:auto;margin-right:auto; width:auto" class="table table-bordered">
+            <tr>
+                <td>Naziv</td>
+                <td>Mesto</td>
+                <td>Liga</td>
+                <td>Godina</td>
+            </tr>
+            <tbody id="tabClubsPreview"></tbody>
+        </table>
+    </div>
+</div>
+<div class="row" id="tableLoged">
+    <div class="col-sm-12" style="text-align:center">
+        <h2>Sportski klubovi</h2>
+        <br />
+        <h4>Pretraga po godini osnivanja</h4>
+        <div class="col-sm-1" style="text-align:right">
+            <label>Od:</label>
+        </div>
+        <div class="col-sm-3">
+            <input type="number" id="godinaOd">
+        </div>
+        <div class="col-sm-1" style="text-align:right">
+            <label>Do:</label>
+        </div>
+        <div class="col-sm-3">
+            <input type="number" id="godinaDo">
+        </div>
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-default" id="pretraga">Pretraga</button>
+        </div>
+        <br />
+        <br />
+        <br />
+        <table style="text-align:center; margin-left:auto;margin-right:auto; width:auto" class="table table-bordered">
+            <tr>
+                <td>Naziv</td>
+                <td>Mesto</td>
+                <td>Liga</td>
+                <td>Godina</td>
+                <td>Akcija</td>
+            </tr>
+            <tbody id="tabClubsLoged"></tbody>
+        </table>
+        <br />
+        <br />
+        <h2>Dodavanje novog Sportskog Kluba</h2>
+        <br />
+        <br />
+        <div class="col-sm-12" style="margin-left:20%;margin-right:20%">
+            <div class="col-sm-4" style="text-align:left;margin-left:10%;padding-bottom:5px">
+                <label>Naziv:</label>
+            </div>
+            <div class="col-sm-4" style="text-align:center;margin-right:10%;padding-bottom:5px">
+                <input type="text" id="nazivKluba">
+            </div>
+            <div class="col-sm-4" style="text-align:left;margin-left:10%;padding-bottom:5px">
+                <label>Mesto:</label>
+            </div>
+            <div class="col-sm-4" style="text-align:center;margin-right:10%;padding-bottom:5px">
+                <input type="text" id="mestoKluba">
+            </div>
+            <div class="col-sm-4" style="text-align:left;margin-left:10%;padding-bottom:5px">
+                <label>Godina osnivanja:</label>
+            </div>
+            <div class="col-sm-4" style="text-align:center;margin-right:10%;padding-bottom:5px">
+                <input type="number" id="godinaOsn">
+            </div>
+            <div class="col-sm-4" style="text-align:left;margin-left:10%;padding-bottom:5px">
+                <label>Cena karte:</label>
+            </div>
+            <div class="col-sm-4" style="text-align:center;margin-right:10%;padding-bottom:5px" >
+                <input type="number" id="cenaKarte" step="0.01">
+            </div>
+            <div class="col-sm-4" style="text-align:left;margin-left:10%;padding-bottom:5px">
+                <label>Liga:</label>
+            </div>
+            <div class="col-sm-4" style="text-align:center;margin-right:10%;padding-bottom:10px">
+                <select id="izborLige">
+                    <option> </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<div class="row">
+    <div class="col-sm-6"></div>
+    <div class="col-sm-2">
+        <button class="btn btn-default" id="dodavanje">Dodavanje</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-primary" id="odustajanje">Odustajanje</button>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
